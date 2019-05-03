@@ -1,0 +1,23 @@
+<app-panel [title]="!!uuid ? 'Save Task' : 'Create Task'">
+  <form [formGroup]="form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Name" [formControl]="name">
+      <mat-error *ngIf="name.hasError('required')">
+        Task name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Due Date" [formControl]="due">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Notes" [formControl]="notes"></textarea>
+    </mat-form-field>
+    <div class="flex justify-end">
+      <button mat-button routerLink="/">Cancel</button>
+      <button mat-raised-button color="primary" (click)="createTask(form.value)" [disabled]="form.invalid" *ngIf="!uuid">Create Task</button>
+      <button mat-raised-button color="primary" (click)="saveTask(form.value)" [disabled]="form.invalid" *ngIf="uuid">Save Task</button>
+    </div>
+  </form>
+</app-panel>

@@ -1,0 +1,10 @@
+<app-panel title="Tasks">
+  <mat-list>
+    <mat-list-item *ngFor="let task of tasks$ | async">
+      <app-task [task]="task"></app-task>
+    </mat-list-item>
+  </mat-list>
+</app-panel>
+<button mat-fab routerLink="create">
+  <mat-icon>add</mat-icon>
+</button>

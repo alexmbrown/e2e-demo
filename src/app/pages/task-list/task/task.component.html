@@ -1,0 +1,12 @@
+<div>
+  <strong>{{task.name}}</strong><br>
+  <span class="muted" *ngIf="task.due">{{task.due | date: 'medium' }}</span>
+</div>
+<div>
+  <button mat-icon-button [routerLink]="task.uuid">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-icon-button (click)="deleteTask()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
