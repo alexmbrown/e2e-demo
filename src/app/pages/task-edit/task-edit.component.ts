@@ -27,7 +27,7 @@ export class TaskEditComponent implements OnInit {
 
   public ngOnInit() {
     this.name = new FormControl('', [Validators.required]);
-    this.due = new FormControl(new Date());
+    this.due = new FormControl(null);
     this.notes = new FormControl('');
 
     this.form = this.formBuilder.group({

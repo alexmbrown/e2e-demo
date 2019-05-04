@@ -1,6 +1,6 @@
 <div>
   <strong>{{task.name}}</strong><br>
-  <span class="muted" *ngIf="task.due">{{task.due | date: 'medium' }}</span>
+  <span class="muted" *ngIf="task.due">{{task.due | date: 'mediumDate' }}</span>
 </div>
 <div>
   <button mat-icon-button [routerLink]="task.uuid">
