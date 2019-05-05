@@ -1,9 +1,10 @@
 <app-panel title="Tasks">
-  <mat-list>
+  <mat-list *ngIf="(tasks$ | async).length > 0">
     <mat-list-item *ngFor="let task of tasks$ | async">
       <app-task [task]="task"></app-task>
     </mat-list-item>
   </mat-list>
+  <strong *ngIf="(tasks$ | async).length <= 0">All Your Tasks Have Been Completed!</strong>
 </app-panel>
 <button mat-fab routerLink="create">
   <mat-icon>add</mat-icon>

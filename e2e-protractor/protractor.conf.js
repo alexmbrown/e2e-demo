@@ -6,7 +6,8 @@ exports.config = {
     './src/**/*.e2e.js'
   ],
   capabilities: {
-    browserName: 'chrome'
+    browserName: 'chrome',
+    chromeOptions: { args: [ "--headless", "--disable-gpu" ] }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',

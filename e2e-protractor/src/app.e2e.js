@@ -53,7 +53,7 @@ describe('Tasks Actions', () => {
   });
 
   it('should delete a task', async () => {
-    // creat task
+    // create task
     await createTask('Test 3', '5/24/2019', 'Sample Note 3');
     let task = listPage.getTask('Test 3');
     // delete task
